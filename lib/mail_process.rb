@@ -1,7 +1,7 @@
 require 'rest_client'
 module Mailprocess
-  MAIL_GUN_API_KEY = "d67f3b3e6fc6cc66165baf384ccd180c" #Configure your mail gun API Key
-  MAIL_DOMAIN = "sandboxdee80bcac0b742c5b842d07f6b201886.mailgun.org" #Configure your mail domain
+  MAIL_GUN_API_KEY = "###########" #Configure your mail gun API Key
+  MAIL_DOMAIN = "############" #Configure your mail domain
   API_VERSION = "v3" #API version used
   BASE_URI = "https://api:key-#{MAIL_GUN_API_KEY}@api.mailgun.net/#{API_VERSION}/#{MAIL_DOMAIN}"
   
@@ -16,7 +16,7 @@ module Mailprocess
       if !to_email.blank?
         begin
           response = RestClient.post "#{BASE_URI}/messages",
-          :from => "Mailgun Test User <mani@maniempire.com>",
+          :from => "Mailgun Test User <xxxx@xxxxxxx.com>",
           :to => to_email,
           :subject => subject,
           :html => " #{text} <br/> A <a href='http://www.google.com'>sample link</a> is atttached 
